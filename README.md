@@ -7,6 +7,7 @@
 - [see sample code](https://github.com/NagaiKoki/json-api-typescript-deserializer/blob/master/demo/index.ts)
 
 ```ts
+// Serialized JSON:API Type
 type RelationShipsApiType = {
   data: {
     id: string;
@@ -53,6 +54,7 @@ type RelationShipsApiType = {
 type SampleRelationalJsonApiType =
   JsonApiRelationshipDeserializeType<RelationShipsApiType>;
 
+// Deserialized JSON:API Type
 const Sample3: SampleRelationalJsonApiType = {
   name: "Nagai Koki",
   drinks: [
