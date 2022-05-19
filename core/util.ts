@@ -8,11 +8,13 @@ export type SnakeObjectToCamelType<T extends Record<string, unknown>> = {
     string & K
   >}`]: T[K] extends Record<string, unknown>
     ? SnakeObjectToCamelType<T[K]>
+    : T[K] extends Record<string, unknown>[]
+    ? SnakeObjectToCamelType<ExtractArrayType<T[K]>>[]
     : T[K];
 };
 
 // Narrowing Union Object
-export type FilterUnionObjectType<
+export type NarrowUnionObjectType<
   UnionObject extends Record<string, unknown>,
   UnionObjectKey extends keyof UnionObject,
   UnionObjectValue extends UnionObject[UnionObjectKey]

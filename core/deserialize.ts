@@ -1,6 +1,6 @@
 import {
   SnakeObjectToCamelType,
-  FilterUnionObjectType,
+  NarrowUnionObjectType,
   ExtractArrayType,
 } from "./util";
 
@@ -45,7 +45,7 @@ export type JsonApiRelationshipDeserializeType<
 > = SnakeObjectToCamelType<T["data"]["attributes"]> &
   SnakeObjectToCamelType<{
     [K in keyof T["data"]["relationships"]]: SnakeObjectToCamelType<
-      FilterUnionObjectType<
+      NarrowUnionObjectType<
         ExtractArrayType<T["data"]["included"]>,
         "type",
         ExtractArrayType<T["data"]["relationships"][K]["data"]>["type"]
