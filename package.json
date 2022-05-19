@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "generate": "ts-node generator.ts"
+    "t-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "devDependencies": {
     "ts-node": "^10.7.0",
