@@ -56,6 +56,7 @@ type SampleRelationalJsonApiType =
 
 // Deserialized JSON:API Type
 const Sample3: SampleRelationalJsonApiType = {
+  id: '1',
   name: "Nagai Koki",
   drinks: [
     {
