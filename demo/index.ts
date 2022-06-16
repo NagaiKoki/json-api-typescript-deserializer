@@ -1,6 +1,6 @@
 import {
-  JsonApiDeserializeType,
-  JsonApiRelationshipDeserializeType,
+  JsonApiDeserializedType,
+  JsonApiRelationshipDeserializedType,
 } from "../core";
 
 type ApiType = {
@@ -70,12 +70,13 @@ type RelationShipsApiType = {
   };
 };
 
-type SampleBaseJsonApiType = JsonApiDeserializeType<ApiType>;
-type SampleArrayJsonApiType = JsonApiDeserializeType<ArrayApiType>;
+type SampleBaseJsonApiType = JsonApiDeserializedType<ApiType>;
+type SampleArrayJsonApiType = JsonApiDeserializedType<ArrayApiType>;
 type SampleRelationalJsonApiType =
-  JsonApiRelationshipDeserializeType<RelationShipsApiType>;
+JsonApiRelationshipDeserializedType<RelationShipsApiType>;
 
 const Sample1: SampleBaseJsonApiType = {
+  id: '1',
   name: "Koki Nagai",
   imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
   age: 26,
@@ -83,11 +84,13 @@ const Sample1: SampleBaseJsonApiType = {
 
 const Sample2: SampleArrayJsonApiType = [
   {
+    id: '1',
     name: "Koki Nagai",
     imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
     age: 26,
   },
   {
+    id: '2',
     name: "Koki Nagai2",
     imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
     age: 21,
@@ -95,9 +98,11 @@ const Sample2: SampleArrayJsonApiType = [
 ];
 
 const Sample3: SampleRelationalJsonApiType = {
+  id: '1',
   name: "Nagai Koki",
   drinks: [
     {
+      id: '1',
       name: "Coke",
       imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
       createdAt: "2021/01/01",
@@ -105,11 +110,13 @@ const Sample3: SampleRelationalJsonApiType = {
   ],
   books: [
     {
+      id: '1',
       title: "TDD",
       imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
       publishedAt: "2021/01/01",
     },
     {
+      id: '2',
       title: "DDD",
       imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
       publishedAt: "2021/01/02",

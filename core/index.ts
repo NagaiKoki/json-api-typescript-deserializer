@@ -1,4 +1,6 @@
 export {
-  JsonApiDeserializeType,
-  JsonApiRelationshipDeserializeType,
+  JsonApiDeserializedType,
+  JsonApiDeserializedWithMetaType,
+  JsonApiRelationshipDeserializedType,
+  JsonApiRelationshipDeserializedWithMetaType
 } from "./deserialize";

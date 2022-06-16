@@ -13,7 +13,6 @@ export type SnakeObjectToCamelType<T extends Record<string, unknown>> = {
     : T[K];
 };
 
-// Narrowing Union Object
 export type NarrowUnionObjectType<
   UnionObject extends Record<string, unknown>,
   UnionObjectKey extends keyof UnionObject,
@@ -22,5 +21,4 @@ export type NarrowUnionObjectType<
   ? UnionObject
   : never;
 
-// Extract Array<T> of T
 export type ExtractArrayType<T> = T extends (infer U)[] ? U : T;
