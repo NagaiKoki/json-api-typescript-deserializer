@@ -52,13 +52,14 @@ type RelationShipsApiType = {
 };
 
 type SampleRelationalJsonApiType =
-  JsonApiRelationshipDeserializeType<RelationShipsApiType>;
+  JsonApiRelationshipDeserializedType<RelationShipsApiType>;
 
 // Deserialized JSON:API Type
 const Sample3: SampleRelationalJsonApiType = {
   name: "Nagai Koki",
   drinks: [
     {
+      id: '1',
       name: "Coke",
       imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
       createdAt: "2021/01/01",
@@ -66,11 +67,13 @@ const Sample3: SampleRelationalJsonApiType = {
   ],
   books: [
     {
+      id: '1',
       title: "TDD",
       imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
       publishedAt: "2021/01/01",
     },
     {
+      id: '2',
       title: "DDD",
       imageUrl: "https://avatars.githubusercontent.com/u/50698194?v=4",
       publishedAt: "2021/01/02",
